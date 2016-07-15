@@ -68,6 +68,7 @@ class BuiltSet<E> implements Iterable<E> {
   /// any order.
   @override
   bool operator ==(other) {
+    if (identical(other, this)) return true;
     if (other is! BuiltSet) return false;
     if (other.length != length) return false;
     if (other.hashCode != hashCode) return false;
